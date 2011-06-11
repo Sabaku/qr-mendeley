@@ -1,0 +1,10 @@
+site:
+  base_url: "http://localhost.org:3000"
+  name: "QRMendeley"
+  main_logo_image: "logo.png"
+
+default_page_size: 10
+max_page_size: 20
+
+cookies:
+  secret_token: "RUN_rake secret_THEN_PLACE_IN_config/settings/custom.yml"
