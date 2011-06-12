@@ -1,0 +1,137 @@
+/* Success, error & notice boxes for messages and errors. */
+div.error, div.notice, div.success,
+#flash_failure, #flash_success, #flash_notice {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding: 0.3em 0.5em;
+}
+
+#flash_failure, #flash_success, #flash_notice {
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  margin-bottom: 1em;
+  padding: 0.8em;
+}
+
+div.error,
+#flash_failure {
+  background: #FBE3E4;
+  border-color: #FBC2C4;
+  color: #D12F19;
+}
+
+div.error a,
+#flash_failure a {
+  color: #D12F19;
+}
+
+div.notice,
+#flash_notice {
+  background: #FFF6BF;
+  border-color: #FFD324;
+  color: #817134;
+}
+
+div.notice a,
+#flash_notice a {
+  color: #817134;
+}
+
+div.success,
+#flash_success {
+  background: #E6EFC2;
+  border-color: #C6D880;
+  color: #529214;
+}
+
+div.success a,
+#flash_success a {
+  color: #529214;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.right {
+  text-align: right;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.faded {
+  color: #777;
+}
+
+.faded_plus {
+  color: #999;
+}
+
+.faded_plus_plus {
+  color: #AAA;
+}
+
+.separator_pipe {
+  margin: 0 1em;
+  color: #CCC;
+  font-weight: normal;
+}
+
+.separator_pipe_lean {
+  margin: 0 0.4em;
+  color: #CCC;
+  font-weight: normal;
+}
+
+.count_text {
+  color: #999;
+  font-weight: normal;
+}
+
+.step_text {
+  font-weight: bold;
+  color: #660000;
+}
+
+.none_text {
+  color: #777;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.error_text {
+  color: red;
+  font-weight: bold;
+}
+
+.extra_text {
+  color: #999;
+  font-weight: normal;
+}
+
+.framed {
+  vertical-align: middle;
+  padding: 3px;
+  background-color: #FFF;
+  border: 1px solid #DDD;
+}
+
+.or {
+  margin: 1em auto;
+  text-align: center;
+  font-weight: bolder;
+}

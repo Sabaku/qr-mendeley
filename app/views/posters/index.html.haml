@@ -1,0 +1,13 @@
+= title "All Posters"
+
+= content do
+
+  - if @posters.empty?
+    %p.center No posters yet
+  - else
+    %ul{ 'data-role'=>"listview", 'data-inset'=>"true" }
+      - @posters.each do |poster|
+        %li
+          = link_to poster.title, poster
+
+  %p= button 'Register a Poster', new_poster_path, "data-icon" => "plus", "class" => "ui-btn-right"

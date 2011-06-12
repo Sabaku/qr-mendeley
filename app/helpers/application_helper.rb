@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def title(page_title, options={}, &block)
     content_for(:title, page_title.to_s)
-    content_tag(:div, 'data-role' => 'header') do
+    content_tag(:div, 'data-role' => 'header', 'data-backbtn' => 'false') do
       if block_given?
         concat(capture(&block))
       else
@@ -23,16 +23,13 @@ module ApplicationHelper
       capture(&block)
     end
   end
-  
+
   def button(content_for_button, link, options={})
     options.reverse_merge!({
-      :color => "regular",
-      :size => "medium"
+      'data-role' => 'button'
     })
 
-    options[:class] = "awesome #{options[:color]} #{options[:size]} button"
-
-    link_to(content_for_button, link, options.delete_if{|o| [ :size, :color ].include? o})
+    link_to(content_for_button, link, options)
   end
-
+  
 end

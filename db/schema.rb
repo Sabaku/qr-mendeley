@@ -10,7 +10,56 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110611180957) do
+ActiveRecord::Schema.define(:version => 20110611202518) do
+
+  create_table "affiliations", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "affiliations", ["name"], :name => "index_affiliations_on_name", :unique => true
+
+  create_table "authors", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "authors", ["name"], :name => "index_authors_on_name", :unique => true
+
+  create_table "events", :force => true do |t|
+    t.string   "name",       :default => "0"
+    t.datetime "start_date",                  :null => false
+    t.datetime "event_date",                  :null => false
+    t.string   "location"
+    t.string   "homepage"
+    t.string   "hashtag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "poster_authors", :force => true do |t|
+    t.integer  "poster_id",      :null => false
+    t.integer  "author_id",      :null => false
+    t.integer  "affiliation_id", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "poster_authors", ["poster_id", "author_id"], :name => "poster_authors_ids_index", :unique => true
+  add_index "poster_authors", ["poster_id"], :name => "index_poster_authors_on_poster_id"
+
+  create_table "posters", :force => true do |t|
+    t.string   "title",        :null => false
+    t.text     "abstract",     :null => false
+    t.string   "download_url", :null => false
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "posters", ["event_id"], :name => "index_posters_on_event_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false

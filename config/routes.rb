@@ -1,5 +1,8 @@
 QrMendeley::Application.routes.draw do
 
+  resources :posters,
+            :except => :destroy     # Need to implement this for admins
+
   match "about" => 'home#about'
 
   root :to => 'home#index'
@@ -61,3 +64,17 @@ QrMendeley::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 end
+#== Route Map
+# Generated on 11 Jun 2011 23:06
+#
+# INFO: No custom settings file at /mnt/Dropbox/Projects/Sabaku/qr-mendeley.git/config/settings/custom.yml so using defaults only
+#     posters GET    /posters(.:format)                    {:action=>"index", :controller=>"posters"}
+#             POST   /posters(.:format)                    {:action=>"create", :controller=>"posters"}
+#  new_poster GET    /posters/new(.:format)                {:action=>"new", :controller=>"posters"}
+# edit_poster GET    /posters/:id/edit(.:format)           {:action=>"edit", :controller=>"posters"}
+#      poster GET    /posters/:id(.:format)                {:action=>"show", :controller=>"posters"}
+#             PUT    /posters/:id(.:format)                {:action=>"update", :controller=>"posters"}
+#             DELETE /posters/:id(.:format)                {:action=>"destroy", :controller=>"posters"}
+#       about        /about(.:format)                      {:action=>"about", :controller=>"home"}
+#        root        /(.:format)                           {:controller=>"home", :action=>"index"}
+#      jammit        /assets/:package.:extension(.:format) {:extension=>/.+/, :controller=>"jammit", :action=>"package"}

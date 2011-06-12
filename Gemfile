@@ -12,13 +12,13 @@ gem 'yaml_db', '>= 0.2'
 
 gem "validates_existence", ">= 0.6"
 gem "database_validation", ">= 0.0.6"
+gem "validate_url"
 
 gem 'hashie'
 gem 'uuid'
 
 gem "haml", "~> 3.1"
 gem "haml-rails"
-gem "formtastic"
 gem 'dynamic_form'
 
 gem "wirble"
