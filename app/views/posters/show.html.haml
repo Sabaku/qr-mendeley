@@ -1,6 +1,16 @@
-%p#notice= notice
+= title "Poster - #{@poster.title}"
 
+= content do
 
-= link_to 'Edit', edit_poster_path(@poster)
-\|
-= link_to 'Back', posters_path
+  %h4 Abstract
+  .abstract
+    = simple_format @poster.abstract
+
+  %h4 Download URL
+  .download_url
+    = link_to @poster.download_url, @poster.download_url, :popup => true
+
+  %h4 QR Code
+  = qr_code_image_tag poster_url(@poster)
+
+  %p= button "View all Posters", posters_path

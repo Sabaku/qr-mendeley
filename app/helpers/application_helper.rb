@@ -14,7 +14,8 @@ module ApplicationHelper
 
   def content(&block)
     content_tag(:div, 'data-role' => 'content') do
-      capture(&block)
+      concat(render :partial => 'layouts/messages')
+      concat(capture(&block))
     end
   end
 
@@ -30,6 +31,10 @@ module ApplicationHelper
     })
 
     link_to(content_for_button, link, options)
+  end
+
+  def qr_code_image_tag(url)
+    image_tag "http://chart.apis.google.com/chart?chs=200x200&cht=qr&&chld=H&chl=#{url}"
   end
   
 end

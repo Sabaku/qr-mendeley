@@ -1,35 +1,21 @@
 class PostersController < ApplicationController
+
   # GET /posters
   # GET /posters.xml
   def index
     @posters = Poster.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @posters }
-    end
   end
 
   # GET /posters/1
   # GET /posters/1.xml
   def show
     @poster = Poster.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @poster }
-    end
   end
 
   # GET /posters/new
   # GET /posters/new.xml
   def new
     @poster = Poster.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @poster }
-    end
   end
 
   # GET /posters/1/edit
@@ -42,14 +28,10 @@ class PostersController < ApplicationController
   def create
     @poster = Poster.new(params[:poster])
 
-    respond_to do |format|
-      if @poster.save
-        format.html { redirect_to(@poster, :notice => 'Poster was successfully created.') }
-        format.xml  { render :xml => @poster, :status => :created, :location => @poster }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @poster.errors, :status => :unprocessable_entity }
-      end
+    if @poster.save
+      redirect_to(@poster, :notice => 'Poster was successfully registered.')
+    else
+      render :action => "new"
     end
   end
 
@@ -58,14 +40,10 @@ class PostersController < ApplicationController
   def update
     @poster = Poster.find(params[:id])
 
-    respond_to do |format|
-      if @poster.update_attributes(params[:poster])
-        format.html { redirect_to(@poster, :notice => 'Poster was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @poster.errors, :status => :unprocessable_entity }
-      end
+    if @poster.update_attributes(params[:poster])
+      redirect_to(@poster, :notice => 'Poster was successfully updated.')
+    else
+      render :action => "edit"
     end
   end
 
@@ -75,9 +53,7 @@ class PostersController < ApplicationController
     @poster = Poster.find(params[:id])
     @poster.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(posters_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to(posters_url)
   end
+
 end

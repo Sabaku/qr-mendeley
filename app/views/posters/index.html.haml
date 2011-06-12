@@ -8,6 +8,8 @@
     %ul{ 'data-role'=>"listview", 'data-inset'=>"true" }
       - @posters.each do |poster|
         %li
-          = link_to poster.title, poster
+          = link_to poster do
+            %h2= poster.title
+            %p= truncate(poster.abstract, :length => 50)
 
   %p= button 'Register a Poster', new_poster_path, "data-icon" => "plus", "class" => "ui-btn-right"
