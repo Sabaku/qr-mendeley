@@ -1,15 +1,16 @@
-= form_for @poster, :html => { 'data-theme' => 'c' } do |f|
-  #title_field{ 'data-role' => 'fieldcontain' }
-    = f.label :title, 'Title*'
-    = f.text_field :title
-  #abstract_field{ 'data-role' => 'fieldcontain' }
-    = f.label :abstract, 'Abstract*'
-    = f.text_area :abstract, :style => 'height: 10em;'
-  #abstract_field{ 'data-role' => 'fieldcontain' }
-    = f.label :download_url, 'Download URL*'
-    = f.text_field :download_url
-  %fieldset.ui-grid-a
-    %div.ui-block-a
-      = submit_tag "Cancel", 'data-theme' => 'c'
-    %div.ui-block-b
-      = f.submit nil, 'data-theme' => 'b'
+%div{ 'data-theme' => 'e' }
+  = form_for @poster, :html => { 'data-ajax' => 'false' } do |f|
+    #title_field{ 'data-role' => 'fieldcontain' }
+      = f.label :title, 'Title*'
+      = f.text_field :title
+    #abstract_field{ 'data-role' => 'fieldcontain' }
+      = f.label :abstract, 'Abstract*'
+      = f.text_area :abstract, :style => 'height: 10em;'
+    #abstract_field{ 'data-role' => 'fieldcontain' }
+      = f.label :download_url, 'Download URL*'
+      = f.text_field :download_url
+    %fieldset.ui-grid-a
+      %div.ui-block-a
+        = submit_tag "Cancel", 'data-theme' => 'c'
+      %div.ui-block-b
+        = f.submit nil, 'data-theme' => 'b'
