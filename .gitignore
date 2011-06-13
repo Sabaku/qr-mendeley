@@ -16,3 +16,4 @@ config/sunspot.yml
 config/database.yml
 db/data.yml
 config/settings/custom.yml
+.project
