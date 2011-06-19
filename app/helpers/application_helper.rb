@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include TweetButton
 
   def title(page_title, options={}, &block)
     content_for(:title, page_title.to_s)
@@ -35,6 +36,7 @@ module ApplicationHelper
 
   def qr_code_image_tag(url)
     image_tag "http://chart.apis.google.com/chart?chs=200x200&cht=qr&&chld=H&chl=#{url}"
+    
   end
   
 end

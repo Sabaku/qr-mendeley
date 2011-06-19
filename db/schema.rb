@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20110611202518) do
   add_index "authors", ["name"], :name => "index_authors_on_name", :unique => true
 
   create_table "events", :force => true do |t|
-    t.string   "name",       :default => "0"
+    t.string   "name",       :default => "f"
     t.datetime "start_date",                  :null => false
     t.datetime "event_date",                  :null => false
     t.string   "location"

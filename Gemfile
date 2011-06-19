@@ -30,6 +30,7 @@ gem 'jquery-rails', '~> 1.0.9', :group => :development
 gem "awesome_print", :group => [:test, :development]
 gem "annotate", :group => :development
 gem "mongrel", '>= 1.2.0.pre2', :group => [:test, :development]
+gem "tweet-button"
 
 # Use unicorn as the web server
 # gem 'unicorn'
