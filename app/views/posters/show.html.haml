@@ -2,6 +2,10 @@
 
 = content do
 
+  .spread
+    %a.twitter-share-button.left{"data-count" => "horizontal", "data-via" => "qrmendeley", :href => "http://twitter.com/share"} Tweet
+    %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
+
   %h4 Abstract
   .abstract
     = simple_format @poster.abstract
@@ -17,13 +21,7 @@
 
   %p= button "View all Posters", posters_path
   
-  .spread
-  .twshare.left
-    %a.twitter-share-button.left{"data-count" => "horizontal", "data-via" => "qrmendeley", :href => "http://twitter.com/share"} Tweet
-    %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
-  .fshare.left{:style => 'padding-left: 0px; margin-left: 10px;'}
-    %script{:src => "http://connect.facebook.net/en_US/all.js#xfbml=1"}
-    %fb:like{:layout => "button_count", :show_faces => "false", :width => "450"}
-  .CLR
+
+ 
  
 
