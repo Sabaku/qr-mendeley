@@ -3,8 +3,17 @@
 = content do
 
   .spread
-    %a.twitter-share-button.left{"data-count" => "horizontal", "data-via" => "qrmendeley", :href => "http://twitter.com/share"} Tweet
+   
+    = link_to("Tweet", "http://twitter.com/share", "data-count" => "horizontal", "data-via" => "qrmendeley", :class => "twitter-share-button left")
+  
+  .mendeleyLink
+  
+    = link_to(image_tag("importMendeley.gif"), "http://www.mendeley.com/import")
+
+   
     %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
+    
+    %span.Z3988{:title => "ctx_ver=Z39.88-2004&rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&rfr_id=info%3Asid%2Focoins.info%3Agenerator&rft.genre=article&rft.atitle=Article&rft.title=Conference+of+conferences&rft.date=2011-03-06&rft.aulast=LAuthor1&rft.aufirst=FAuthor1&rft.au=FAuthor1+LAuthor1&rft.au=FAuthor2+LAuthor2&rft.au=FAuthor3+LAuthor3"}
 
   %h4 Abstract
   .abstract
